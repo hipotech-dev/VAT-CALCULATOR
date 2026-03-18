@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StockMaster.co.tz • VAT free tool</title>
     <!-- Google Font & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
             align-items: center;
             justify-content: center;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            padding: 0.75rem;
+            padding: 1.5rem;
             transition: background-color 0.2s ease;
         }
 
@@ -46,7 +46,7 @@
             --button-active-bg: #1e3c5c;
             --button-active-text: white;
             --result-card-bg: white;
-            --shadow: 0 8px 20px -12px rgba(0,30,60,0.2);
+            --shadow: 0 20px 40px -20px rgba(0,30,60,0.3);
             --icon-color: #1e3c5c;
         }
 
@@ -67,7 +67,7 @@
             --button-active-bg: #4f7aa6;
             --button-active-text: #ffffff;
             --result-card-bg: #253241;
-            --shadow: 0 8px 20px -8px rgba(0,0,0,0.5);
+            --shadow: 0 20px 40px -12px rgba(0,0,0,0.6);
             --icon-color: #b8d1ec;
         }
 
@@ -96,89 +96,91 @@
             background: linear-gradient(145deg, var(--bg-gradient-start), var(--bg-gradient-end));
         }
 
-        /* Main card - mobile first */
+        /* Main card - responsive design */
         .card {
             width: 100%;
-            max-width: 480px;
+            max-width: 1200px;
             background: var(--card-bg);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-radius: 36px;
+            border-radius: 48px;
             box-shadow: var(--shadow), inset 0 1px 1px rgba(255,255,255,0.2);
-            padding: 1.25rem 1rem;
+            padding: 2rem;
             border: 1px solid var(--card-border);
         }
 
-        /* header - simplified for mobile */
+        /* ===== DESKTOP LAYOUT (default) ===== */
         .app-header {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
-        
+
         .title-section {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
         }
-        
+
         .title-section i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--icon-color);
             background: rgba(11,59,92,0.1);
-            padding: 0.5rem;
-            border-radius: 20px;
+            padding: 0.75rem;
+            border-radius: 24px;
         }
-        
+
         .title-section h1 {
-            font-size: 1.3rem;
+            font-size: 2rem;
             font-weight: 700;
-            line-height: 1.2;
             color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
-        
+
         .title-section span {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             background: var(--panel-bg);
-            padding: 0.2rem 0.8rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 40px;
             border: 1px solid var(--input-border);
             color: var(--text-secondary);
-            white-space: nowrap;
+            font-weight: 500;
         }
 
         .header-controls {
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .lang-selector, .theme-toggle {
             display: flex;
             background: var(--panel-bg);
             border: 1px solid var(--input-border);
-            border-radius: 40px;
-            padding: 0.2rem;
+            border-radius: 60px;
+            padding: 0.4rem;
         }
 
         .lang-option, .theme-btn {
             background: transparent;
             border: none;
-            padding: 0.4rem 1rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-secondary);
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 8px;
+            transition: all 0.2s;
         }
 
         .lang-option i, .theme-btn i {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .lang-option.active, .theme-btn.active {
@@ -186,34 +188,34 @@
             color: var(--button-active-text);
         }
 
-        /* Currency & VAT row - stacked on mobile */
+        /* Desktop: horizontal row for currency and VAT */
         .currency-rate-row {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            align-items: center;
+            gap: 1.5rem;
             background: var(--panel-bg);
-            border-radius: 28px;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            border-radius: 60px;
+            padding: 0.8rem 1.5rem;
+            margin-bottom: 1.5rem;
             border: 1px solid var(--panel-border);
         }
 
         .currency-picker {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            width: 100%;
+            gap: 1rem;
+            flex: 2;
         }
 
         .currency-picker i {
             color: var(--icon-color);
-            font-size: 1.2rem;
-            min-width: 24px;
+            font-size: 1.3rem;
         }
 
         .currency-search {
             position: relative;
             flex: 1;
+            max-width: 250px;
         }
 
         .currency-search input {
@@ -229,11 +231,10 @@
 
         .currency-search i.fa-search {
             position: absolute;
-            left: 12px;
+            left: 14px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
-            font-size: 0.9rem;
         }
 
         .currency-dropdown {
@@ -243,8 +244,8 @@
             right: 0;
             background: var(--input-bg);
             border-radius: 20px;
-            box-shadow: 0 8px 16px var(--shadow);
-            max-height: 200px;
+            box-shadow: 0 10px 20px var(--shadow);
+            max-height: 250px;
             overflow-y: auto;
             z-index: 20;
             display: none;
@@ -256,14 +257,17 @@
         }
 
         .currency-item {
-            padding: 0.6rem 1rem;
+            padding: 0.8rem 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
             cursor: pointer;
             border-bottom: 1px solid var(--input-border);
             color: var(--text-primary);
-            font-size: 0.9rem;
+        }
+
+        .currency-item:hover {
+            background: var(--panel-bg);
         }
 
         .currency-item.selected {
@@ -273,24 +277,22 @@
 
         .currency-item .code {
             font-weight: 600;
-            min-width: 45px;
+            min-width: 50px;
         }
 
         #selectedCurrencySymbol {
             font-weight: 700;
-            min-width: 45px;
+            min-width: 60px;
             color: var(--text-primary);
+            font-size: 1.1rem;
         }
 
-        /* VAT module - scrollable on mobile */
         .vat-rate-module {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 0.75rem;
-            background: var(--panel-bg);
-            padding: 0.5rem 0;
-            border-top: 1px dashed var(--input-border);
+            gap: 1.5rem;
+            flex: 1;
+            justify-content: flex-end;
         }
 
         .vat-rate-module .label {
@@ -298,35 +300,31 @@
             color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 0.3rem;
-            font-size: 0.95rem;
-            width: 100%;
+            gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .rate-controls {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 0.5rem;
-            width: 100%;
+            gap: 0.8rem;
         }
 
         .rate-btns {
             display: flex;
-            gap: 0.3rem;
-            flex: 1;
+            gap: 0.5rem;
         }
 
         .rate-btn {
-            flex: 1;
             background: var(--button-bg);
             border: 1px solid var(--button-border);
             color: var(--text-secondary);
             font-weight: 600;
-            padding: 0.6rem 0.2rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 40px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            transition: all 0.2s;
         }
 
         .rate-btn.active {
@@ -341,88 +339,86 @@
             background: var(--input-bg);
             border-radius: 40px;
             border: 1px solid var(--input-border);
-            min-width: 100px;
         }
 
         .custom-rate input {
-            width: 55px;
-            padding: 0.6rem 0.2rem 0.6rem 0.8rem;
+            width: 70px;
+            padding: 0.6rem 0.2rem 0.6rem 1rem;
             border: none;
             background: transparent;
             font-weight: 600;
             color: var(--text-primary);
             outline: none;
             text-align: right;
-            font-size: 0.95rem;
         }
 
         .custom-rate span {
-            padding-right: 0.8rem;
+            padding-right: 1rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
         }
 
-        /* Amount field - big and friendly */
+        /* Amount field - desktop */
         .amount-container {
             background: var(--panel-bg);
-            border-radius: 40px;
-            padding: 0.2rem 1.2rem;
-            margin: 1rem 0;
+            border-radius: 60px;
+            padding: 0.5rem 2rem;
+            margin: 1.5rem 0;
             border: 1px solid var(--panel-border);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
         .amount-prefix {
-            font-size: 1.6rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--icon-color);
-            min-width: 60px;
+            min-width: 100px;
         }
 
         .amount-container input {
             flex: 1;
             background: transparent;
             border: none;
-            padding: 1rem 0;
-            font-size: 1.8rem;
+            padding: 1.5rem 0;
+            font-size: 2.5rem;
             font-weight: 600;
             font-family: 'Inter', monospace;
             color: var(--text-primary);
             outline: none;
-            width: 100%;
-            min-width: 0; /* Prevent overflow */
         }
 
-        .amount-container input::placeholder {
-            color: var(--text-muted);
-            opacity: 0.5;
-        }
-
-        /* Converter - compact for mobile */
+        /* Converter - desktop row */
         .converter-row {
             background: var(--panel-bg);
-            border-radius: 28px;
-            padding: 1rem;
-            margin: 1rem 0;
+            border-radius: 60px;
+            padding: 1.2rem 2rem;
+            margin: 1.5rem 0;
             border: 1px solid var(--panel-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         .converter-title {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
             color: var(--icon-color);
             font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            white-space: nowrap;
         }
 
         .converter-controls {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: flex-end;
         }
 
         .converter-selects {
@@ -432,15 +428,15 @@
         }
 
         .converter-selects select {
-            flex: 1;
             background: var(--input-bg);
             border: 1px solid var(--input-border);
             border-radius: 40px;
-            padding: 0.7rem 0.5rem;
+            padding: 0.7rem 1.5rem;
             font-weight: 500;
             color: var(--text-primary);
             outline: none;
-            font-size: 0.95rem;
+            cursor: pointer;
+            min-width: 100px;
         }
 
         .converter-input-group {
@@ -449,49 +445,45 @@
         }
 
         .converter-input-group input {
-            flex: 1;
             background: var(--input-bg);
             border: 1px solid var(--input-border);
             border-radius: 40px;
-            padding: 0.7rem 1rem;
+            padding: 0.7rem 1.2rem;
+            width: 150px;
             font-weight: 500;
             color: var(--text-primary);
             outline: none;
-            font-size: 0.95rem;
         }
 
         .converter-input-group button {
             background: var(--button-active-bg);
             border: none;
             color: var(--button-active-text);
-            padding: 0.7rem 1.2rem;
+            padding: 0.7rem 2rem;
             border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
-            font-size: 0.9rem;
             white-space: nowrap;
         }
 
         .converter-rate {
-            margin-top: 0.75rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-secondary);
             background: var(--input-bg);
-            padding: 0.6rem 1rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 40px;
             border: 1px solid var(--input-border);
-            text-align: center;
-            font-weight: 500;
+            white-space: nowrap;
         }
 
-        /* Direction toggle - compact */
+        /* Direction toggle - desktop */
         .direction-toggle {
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
             background: var(--panel-bg);
-            padding: 0.3rem;
+            padding: 0.5rem;
             border-radius: 60px;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             border: 1px solid var(--input-border);
         }
 
@@ -499,7 +491,7 @@
             flex: 1;
             background: transparent;
             border: none;
-            padding: 0.7rem 0.5rem;
+            padding: 1rem;
             border-radius: 60px;
             font-weight: 600;
             color: var(--text-secondary);
@@ -507,12 +499,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.3rem;
-            font-size: 0.9rem;
-        }
-
-        .direction-option i {
-            font-size: 1rem;
+            gap: 0.8rem;
+            font-size: 1.1rem;
         }
 
         .direction-option.active {
@@ -520,52 +508,46 @@
             color: var(--button-active-text);
         }
 
-        /* Results - scroll horizontally on small screens if needed */
+        /* Results grid - desktop 3 columns */
         .results-grid {
-            display: flex;
-            gap: 0.75rem;
-            margin: 1rem 0;
-            overflow-x: auto;
-            padding: 0.25rem 0;
-            scrollbar-width: thin;
-            -webkit-overflow-scrolling: touch;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .result-card {
             background: var(--result-card-bg);
-            flex: 0 0 auto;
-            width: 130px;
-            border-radius: 28px;
-            padding: 1rem 0.5rem;
+            border-radius: 40px;
+            padding: 2rem 1rem;
             text-align: center;
             border: 1px solid var(--input-border);
             box-shadow: var(--shadow);
         }
 
         .result-card .label {
-            font-size: 0.8rem;
+            font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.2rem;
-            margin-bottom: 0.3rem;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .result-card .value {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--text-primary);
             line-height: 1.2;
-            word-break: break-word;
         }
 
         .result-card .sub {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            margin-top: 0.2rem;
+            margin-top: 0.5rem;
         }
 
         /* Footer */
@@ -573,47 +555,217 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: 2rem;
             color: var(--text-muted);
             border-top: 1px dashed var(--input-border);
-            padding-top: 1rem;
-            font-size: 0.85rem;
+            padding-top: 1.5rem;
         }
 
         .reset-btn {
             background: none;
             border: 1px solid var(--input-border);
             border-radius: 40px;
-            padding: 0.5rem 1.2rem;
+            padding: 0.7rem 2rem;
             color: var(--text-secondary);
             font-weight: 600;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 1rem;
+        }
+
+        .reset-btn:hover {
+            background: var(--panel-bg);
+        }
+
+        /* ===== MOBILE LAYOUT (max-width: 900px) ===== */
+        @media (max-width: 900px) {
+            body {
+                padding: 0.75rem;
+            }
+
+            .card {
+                padding: 1.25rem;
+                border-radius: 36px;
+            }
+
+            /* Stack header */
+            .app-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .title-section h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-controls {
+                justify-content: space-between;
+            }
+
+            /* Stack currency and VAT */
+            .currency-rate-row {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem;
+                border-radius: 28px;
+            }
+
+            .currency-picker {
+                width: 100%;
+            }
+
+            .currency-search {
+                max-width: none;
+            }
+
+            .vat-rate-module {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+                border-top: 1px dashed var(--input-border);
+                padding-top: 1rem;
+            }
+
+            .rate-controls {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .rate-btns {
+                flex: 1;
+            }
+
+            .rate-btn {
+                padding: 0.6rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .custom-rate {
+                min-width: 110px;
+            }
+
+            /* Smaller amount field */
+            .amount-container {
+                padding: 0.2rem 1.2rem;
+            }
+
+            .amount-prefix {
+                font-size: 1.6rem;
+                min-width: 70px;
+            }
+
+            .amount-container input {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+            }
+
+            /* Stack converter */
+            .converter-row {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem;
+                border-radius: 28px;
+            }
+
+            .converter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .converter-selects {
+                width: 100%;
+            }
+
+            .converter-selects select {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .converter-input-group {
+                width: 100%;
+            }
+
+            .converter-input-group input {
+                flex: 1;
+                width: auto;
+            }
+
+            .converter-rate {
+                text-align: center;
+                white-space: normal;
+            }
+
+            /* Direction toggle smaller */
+            .direction-option {
+                padding: 0.7rem;
+                font-size: 0.95rem;
+                gap: 0.4rem;
+            }
+
+            /* Results scroll horizontally on mobile */
+            .results-grid {
+                display: flex;
+                gap: 0.75rem;
+                overflow-x: auto;
+                padding: 0.25rem 0 0.5rem;
+                margin: 1rem 0;
+                scrollbar-width: thin;
+            }
+
+            .result-card {
+                flex: 0 0 140px;
+                padding: 1.2rem 0.5rem;
+            }
+
+            .result-card .value {
+                font-size: 1.3rem;
+            }
+
+            /* Footer */
+            .footer-row {
+                font-size: 0.9rem;
+            }
+
+            .reset-btn {
+                padding: 0.5rem 1.2rem;
+            }
+        }
+
+        /* Small mobile adjustments */
+        @media (max-width: 480px) {
+            .title-section {
+                flex-wrap: wrap;
+            }
+            
+            .title-section span {
+                font-size: 0.8rem;
+                padding: 0.2rem 1rem;
+            }
+
+            .lang-option, .theme-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .result-card {
+                flex: 0 0 120px;
+            }
         }
 
         /* Fix for iOS inputs */
         input[type="text"], input[type="number"], select {
-            font-size: 16px; /* Prevents zoom on iOS */
-        }
-
-        /* Small screen adjustments */
-        @media (max-width: 380px) {
-            .card { padding: 1rem 0.75rem; }
-            .amount-prefix { font-size: 1.4rem; min-width: 50px; }
-            .amount-container input { font-size: 1.5rem; }
-            .result-card { width: 115px; }
-            .result-card .value { font-size: 1.1rem; }
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Header - simplified for mobile -->
+        <!-- Header -->
         <div class="app-header">
             <div class="title-section">
                 <i class="fas fa-calculator"></i>
                 <h1>StockMaster.co.tz</h1>
-                <span>VAT free</span>
+                <span>VAT free tool</span>
             </div>
             <div class="header-controls">
                 <div class="lang-selector">
@@ -628,13 +780,13 @@
             </div>
         </div>
 
-        <!-- Currency & VAT - stacked mobile friendly -->
+        <!-- Currency & VAT row -->
         <div class="currency-rate-row">
             <div class="currency-picker">
                 <i class="fas fa-coins"></i>
                 <div class="currency-search">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="currencySearch" placeholder="TZS, USD..." autocomplete="off">
+                    <input type="text" id="currencySearch" placeholder="TZS, USD, EUR..." autocomplete="off">
                     <div class="currency-dropdown" id="currencyDropdown"></div>
                 </div>
                 <span id="selectedCurrencySymbol">TSh</span>
@@ -656,16 +808,16 @@
             </div>
         </div>
 
-        <!-- Amount input - big and clear -->
+        <!-- Amount input -->
         <div class="amount-container">
             <span class="amount-prefix" id="currencyPrefix">TSh</span>
             <input type="text" id="amountInput" placeholder="0.00" value="1250.75" inputmode="decimal">
         </div>
 
-        <!-- Currency converter - compact -->
+        <!-- Currency converter -->
         <div class="converter-row">
             <div class="converter-title">
-                <i class="fas fa-exchange-alt"></i> <span id="converterLabel">Converter</span>
+                <i class="fas fa-exchange-alt"></i> <span id="converterLabel">Currency Converter</span>
             </div>
             <div class="converter-controls">
                 <div class="converter-selects">
@@ -687,7 +839,7 @@
                 </div>
                 <div class="converter-input-group">
                     <input type="number" id="convertAmount" placeholder="Amount" value="1000" step="0.01">
-                    <button id="convertBtn"><i class="fas fa-sync-alt"></i> <span id="convertBtnLabel">Go</span></button>
+                    <button id="convertBtn"><i class="fas fa-sync-alt"></i> <span id="convertBtnLabel">Convert</span></button>
                 </div>
             </div>
             <div class="converter-rate" id="converterResult">= 2,750,000.00 TZS</div>
@@ -695,16 +847,16 @@
 
         <!-- Add/Remove VAT toggle -->
         <div class="direction-toggle">
-            <button class="direction-option active" id="addVatBtn"><i class="fas fa-plus-circle"></i> <span id="addLabel">Add</span></button>
-            <button class="direction-option" id="removeVatBtn"><i class="fas fa-minus-circle"></i> <span id="removeLabel">Remove</span></button>
+            <button class="direction-option active" id="addVatBtn"><i class="fas fa-plus-circle"></i> <span id="addLabel">Add VAT</span></button>
+            <button class="direction-option" id="removeVatBtn"><i class="fas fa-minus-circle"></i> <span id="removeLabel">Remove VAT</span></button>
         </div>
 
-        <!-- Results cards - horizontally scrollable on mobile -->
+        <!-- Results cards - responsive grid -->
         <div class="results-grid">
             <div class="result-card">
                 <div class="label"><i class="fas fa-file-invoice"></i> <span id="netLabel">Net</span></div>
                 <div class="value" id="netValue">TSh 1,250.75</div>
-                <div class="sub" id="netSub">excl.</div>
+                <div class="sub" id="netSub">excl. VAT</div>
             </div>
             <div class="result-card">
                 <div class="label"><i class="fas fa-plus-circle"></i> <span id="vatLabelResult">VAT</span></div>
@@ -714,48 +866,48 @@
             <div class="result-card">
                 <div class="label"><i class="fas fa-receipt"></i> <span id="grossLabel">Gross</span></div>
                 <div class="value" id="grossValue">TSh 1,475.89</div>
-                <div class="sub" id="grossSub">incl.</div>
+                <div class="sub" id="grossSub">incl. VAT</div>
             </div>
         </div>
 
-        <!-- Footer with reset -->
+        <!-- Footer -->
         <div class="footer-row">
-            <span><i class="fas fa-mobile-alt"></i> <span id="footerText">supports cents</span></span>
-            <button class="reset-btn" id="resetBtn"><i class="fas fa-undo-alt"></i> <span id="resetLabel">Reset</span></button>
+            <span><i class="fas fa-mobile-alt"></i> <span id="footerText">responsive · supports cents</span></span>
+            <button class="reset-btn" id="resetBtn"><i class="fas fa-undo-alt"></i> <span id="resetLabel">Reset all</span></button>
         </div>
     </div>
 
     <script>
         (function() {
-            // Simplified translations for mobile
+            // Translations
             const translations = {
                 en: {
                     vatLabel: "VAT",
-                    addLabel: "Add",
-                    removeLabel: "Remove",
+                    addLabel: "Add VAT",
+                    removeLabel: "Remove VAT",
                     netLabel: "Net",
                     vatLabelResult: "VAT",
                     grossLabel: "Gross",
-                    netSub: "excl.",
-                    grossSub: "incl.",
-                    footerText: "supports cents",
-                    resetLabel: "Reset",
-                    converterLabel: "Converter",
-                    convertBtnLabel: "Go",
+                    netSub: "excl. VAT",
+                    grossSub: "incl. VAT",
+                    footerText: "responsive · supports cents",
+                    resetLabel: "Reset all",
+                    converterLabel: "Currency Converter",
+                    convertBtnLabel: "Convert",
                 },
                 sw: {
                     vatLabel: "VAT",
-                    addLabel: "Ongeza",
-                    removeLabel: "Toa",
+                    addLabel: "Ongeza VAT",
+                    removeLabel: "Toa VAT",
                     netLabel: "Net",
                     vatLabelResult: "VAT",
                     grossLabel: "Jumla",
-                    netSub: "bila",
-                    grossSub: "pamoja",
-                    footerText: "senti",
-                    resetLabel: "Weka",
-                    converterLabel: "Badilisha",
-                    convertBtnLabel: "Nenda",
+                    netSub: "bila VAT",
+                    grossSub: "pamoja na VAT",
+                    footerText: "inayobadilika · inasaidia senti",
+                    resetLabel: "Weka upya",
+                    converterLabel: "Kibadilisha fedha",
+                    convertBtnLabel: "Badilisha",
                 }
             };
 
@@ -765,7 +917,9 @@
                 { code: "USD", name: "US Dollar", symbol: "$" },
                 { code: "EUR", name: "Euro", symbol: "€" },
                 { code: "GBP", name: "British Pound", symbol: "£" },
-                { code: "KES", name: "Kenyan Shilling", symbol: "KSh" }
+                { code: "KES", name: "Kenyan Shilling", symbol: "KSh" },
+                { code: "UGX", name: "Ugandan Shilling", symbol: "USh" },
+                { code: "ZAR", name: "South African Rand", symbol: "R" }
             ];
 
             // DOM elements
@@ -810,7 +964,7 @@
             let currentLang = 'sw';
             let currentCurrency = { code: 'TZS', symbol: 'TSh' };
             let currentMode = 'add';
-            let exchangeRates = { TZS: 1, USD: 0.0004, EUR: 0.00037, GBP: 0.00031, KES: 0.052 };
+            let exchangeRates = { TZS: 1, USD: 0.0004, EUR: 0.00037, GBP: 0.00031, KES: 0.052, UGX: 1.52, ZAR: 0.0075 };
 
             // Theme handling
             function setTheme(theme) {
